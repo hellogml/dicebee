@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dice Roller - Roll Multiple Dice Online Free | dicebee</title>
+<meta name="description" content="Roll 1 to 20 dice with 4, 6, 8, 10, 12, 20 or 100 sides. Fair random results, realistic roll animation, totals and roll history. Free, no sign-up.">
+<link rel="canonical" href="https://dicebee.com/">
+<meta property="og:title" content="Dice Roller - Roll Multiple Dice Online Free | dicebee">
+<meta property="og:description" content="Fair random dice with a real roll animation, totals, averages and full roll history.">
+<meta property="og:url" content="https://dicebee.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dicebee">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link rel="stylesheet" href="css/style.css?v=059660d6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "dicebee Dice Roller",
+  "url": "https://dicebee.com",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free online dice roller for board games, classroom quizzes and draws. Secure random results with a realistic roll animation, totals and history."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which dice can I roll?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any combination of D4, D6, D8, D10, D12, D20 and D100, with 1 to 20 dice in a single roll."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the dice rolls fair and random?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every result comes from your browser’s cryptographically secure random number generator, so each face has an equal chance and nothing is predetermined."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see the history of my rolls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each roll, its individual dice and the running total are added to the roll history so you can review the whole session."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account to roll dice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The dice roller is free, runs entirely in your browser and needs no account, download or sign-up."
+      }
+    }
+  ]
+}
+</script>
+  <!-- cms:ga4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-20CJZ4MRWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-20CJZ4MRWG', { anonymize_ip: true });
+</script><!-- /cms:ga4 -->
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="/">
+      <img src="images/logo.svg" alt="dicebee logo" class="logo" width="38" height="38">
+      <span class="brand-name">dice<em>bee</em></span>
+    </a>
+<nav class="db-nv" aria-label="Main menu">
+      <ul class="db-nvlinks"><li><a href="/">Dice Roller</a></li><li><a href="/articles">Guides</a></li><li><a href="/about-us">About</a></li></ul>
+      <details class="db-mm">
+        <summary class="db-mmbtn" aria-label="Toggle menu"><span class="db-mmico" aria-hidden="true"></span></summary>
+        <div class="db-mmpanel">
+        <a class="db-mmlink" href="/">Dice Roller</a>
+        <a class="db-mmlink" href="/articles">Guides</a>
+        <a class="db-mmlink" href="/about-us">About</a>
+        </div>
+      </details>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">&#9681;</button>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="wrap">
+    <p class="eyebrow">Dice Roller &middot; Any dice, any roll</p>
+    <h1>Roll the dice. Any dice.</h1>
+    <p class="lede">Pick how many dice and how many sides — 6, 8, 12, 20, even 100. Watch them tumble, then add up every pip and total the round in a click.</p>
+  </div>
+
+  <div class="wrap calc-grid">
+    <div class="panel stage">
+      <div class="field-label" id="dice-label">How many dice?</div>
+      <div class="stepper">
+        <button type="button" class="step" id="dec-dice" aria-label="Fewer dice">&#8722;</button>
+        <span class="step-val" id="dice-count">2</span>
+        <button type="button" class="step" id="inc-dice" aria-label="More dice">+</button>
+        <input type="range" id="dice-range" min="1" max="20" value="2" aria-label="Number of dice">
+      </div>
+      <p class="hint">Roll 1 to 20 dice in a single round.</p>
+
+      <div class="field-label">How many sides?</div>
+      <div class="face-chips" id="face-chips">
+        <button type="button" data-faces="4">d4</button>
+        <button type="button" data-faces="6">d6</button>
+        <button type="button" data-faces="8">d8</button>
+        <button type="button" data-faces="10">d10</button>
+        <button type="button" data-faces="12">d12</button>
+        <button type="button" data-faces="20" class="on">d20</button>
+        <button type="button" data-faces="100">d100</button>
+      </div>
+      <div class="row-actions">
+        <button class="btn primary big" id="roll-btn" type="button">Roll Dice</button>
+        <button class="btn ghost" id="clear-btn" type="button">Clear</button>
+      </div>
+    </div>
+
+    <div class="panel results" aria-live="polite">
+      <div class="results-title"><h2>Your roll</h2><span id="round-label"></span></div>
+      <div id="dice-tray" class="dice-tray">
+        <div class="placeholder">Press Roll Dice to start the round.</div>
+      </div>
+      <div class="totals" id="totals" hidden>
+        <div class="total-item"><span>Total</span><b id="t-total">0</b></div>
+        <div class="total-item"><span>Average</span><b id="t-avg">0</b></div>
+        <div class="total-item"><span>Max</span><b id="t-max">0</b></div>
+        <div class="total-item"><span>Min</span><b id="t-min">0</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap history-wrap">
+    <div class="results-title"><h2>Roll history</h2><button class="btn ghost small" id="clear-history" type="button">Clear history</button></div>
+    <div id="history" class="history"><p class="page-lede" style="margin:0">Your recent rounds show up here.</p></div>
+  </div>
+</section>
+
+<main class="page">
+  <div class="wrap steps-wrap">
+    <h2>How the roll works</h2>
+    <ol class="howlist">
+      <li><b>Choose your dice.</b> Pick the number of dice and the face count that fits your game — classic d6, or the tabletop favorites.</li>
+      <li><b>Random, not guesswork.</b> Each die uses your browser's secure random generator, so every face is just as likely as the next and no pattern repeats.</li>
+      <li><b>Watch and read.</b> The dice tumble, then land on clear values you can read at a glance.</li>
+      <li><b>Add it all up.</b> Total, average, min and max are computed for every round automatically.</li>
+    </ol>
+  </div>
+</main>
+
+<!-- FAQ -->
+  
+    <!-- cms:guide-block 用途解释+使用步骤 -->
+    <section class="guide-block" aria-label="About Dice Roller and how to use it">
+      <h2>Rolling dice without the table</h2>
+<p>Dicebee gives you a clean, instant dice roller for any game, simulation, or probability check that needs random results. Tabletop players running a session through a screen, teachers demonstrating chance and distribution, and game designers testing mechanics all use it to generate rolls quickly. Pick how many dice you need, choose the number of sides, and get your results immediately. No accounts, no app installs, and no ads cluttering the view. It works equally well for a single d20 save roll or a handful of d6s for damage.</p>
+    </section>
+<section class="faq-block">
+    <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Which dice can I roll?</summary>
+        <p>Any combination of D4, D6, D8, D10, D12, D20 and D100, with 1 to 20 dice in a single roll.</p>
+      </details>
+      <details>
+        <summary>Are the dice rolls fair and random?</summary>
+        <p>Yes. Every result comes from your browser’s cryptographically secure random number generator, so each face has an equal chance and nothing is predetermined.</p>
+      </details>
+      <details>
+        <summary>Can I see the history of my rolls?</summary>
+        <p>Yes. Each roll, its individual dice and the running total are added to the roll history so you can review the whole session.</p>
+      </details>
+      <details>
+        <summary>Do I need an account to roll dice?</summary>
+        <p>No. The dice roller is free, runs entirely in your browser and needs no account, download or sign-up.</p>
+      </details>
+  </section>
+
+<!-- CONVERTER-HUBS-START -->
+    <section class="content-section">
+      <div class="inner">
+        <h2>Look up the odds before the roll</h2>
+        <p>Exact distributions for the pools that come up at a table, from a single d4 to a handful of d6s: every sum, the number of ways to reach it and the cumulative odds.</p>
+        <div class="db-rel">
+          <a href="/roll/all">All dice pools</a>
+          <a href="/roll/2d6">2d6</a>
+          <a href="/roll/3d6">3d6</a>
+          <a href="/roll/1d20">1d20</a>
+          <a href="/roll/4d6">4d6</a>
+          <a href="/roll/10d6">10d6</a>
+        </div>
+      </div>
+    </section>
+    <!-- CONVERTER-HUBS-END -->
+
+    <!-- ARTICLES-LIST-START -->
+    <section class="content-section">
+      <div class="inner">
+        <h2>Latest Articles</h2>
+        <div class="article-list">
+          <a href="4d6-keep-highest-vs-drop-lowest-mathematical-differences-and-web-tool-implementation-for-rpg-stats">
+            <div class="article-title">4d6 Keep Highest vs Drop Lowest: Mathematical Differences and Web Tool Implementation for RPG Stats</div>
+            <div class="article-desc">Last Friday, you sat down for session zero. Character sheets spread across the table. Pizza cooling in the corner.</div>
+          </a>
+          <a href="tracking-critical-hits-and-natural-1s-using-digital-dice-tools-to-analyze-ttrpg-combat-streaks">
+            <div class="article-title">Tracking Critical Hits and Natural 1s: Using Digital Dice Tools to Analyze TTRPG Combat Streaks</div>
+            <div class="article-desc">One Game Master ends a brutal session convinced their dice are cursed. Three natural 1s in a single encounter. Two enemy critical hits back-to-back. The party nearly wiped.</div>
+          </a>
+          <a href="cross-session-tabletop-rpg-dice-logging-how-to-save-and-export-roll-data-without-an-account">
+            <div class="article-title">Cross-Session Tabletop RPG Dice Logging: How to Save and Export Roll Data Without an Account</div>
+            <div class="article-desc">You are six players deep into a long-form campaign. Session 52 ended last Tuesday with a nat 20 that saved the entire party from a TPK at the hands of a lich. Everyone cheered. The moment passed.</div>
+          </a>
+          <a href="pathfinder-rpg-probability-calculators-adapting-web-based-dice-trackers-for-different-ttrpg-systems">
+            <div class="article-title">Pathfinder RPG Probability Calculators: Adapting Web-Based Dice Trackers for Different TTRPG Systems</div>
+            <div class="article-desc">A Pathfinder fighter stands at the edge of a cliff, longbow drawn, aiming at a wyvern circling 120 feet above.</div>
+          </a>
+          <a href="calculating-total-sum-vs-individual-faces-displaying-multiple-polyhedral-dice-results-in-web-tools">
+            <div class="article-title">Calculating Total Sum vs Individual Faces: Displaying Multiple Polyhedral Dice Results in Web Tools</div>
+            <div class="article-desc">You are three hours deep into a climactic boss encounter. Your party's ranger just rolled 4d6 for a Hunter's Mark volley, and the dice roller on your screen flashes a single number: 19 .</div>
+          </a>
+          <a href="how-to-wipe-your-virtual-dice-roll-history-and-protect-tabletop-rpg-campaign-privacy">
+            <div class="article-title">How to Wipe Your Virtual Dice Roll History and Protect Tabletop RPG Campaign Privacy</div>
+            <div class="article-desc">Most GMs assume that clearing the chat window deletes their dice roll history. It doesn't. It only clears the top layer of it. Picture a situation that plays out constantly in long online campaigns.</div>
+          </a>
+          <a href="no-account-required-securing-persistent-browser-session-logs-for-tabletop-rpg-dice-rollers">
+            <div class="article-title">No Account Required: Securing Persistent Browser Session Logs for Tabletop RPG Dice Rollers</div>
+            <div class="article-desc">Most tabletop RPG groups running play-by-post or Discord-integrated games have settled into the same broken habit.</div>
+          </a>
+          <a href="how-to-use-a-free-online-d20-roller-with-advantage-and-roll-history-for-dnd-combat-without-sign-up">
+            <div class="article-title">How to Use a Free Online D20 Roller with Advantage and Roll History for Dnd Combat Without Sign-up</div>
+            <div class="article-desc">Last Tuesday, my party's Paladin landed a critical hit that turned the entire boss encounter. The problem? Nobody remembered the exact roll. The Barbarian's player accused me of fudging numbers.</div>
+          </a>
+          <a href="how-to-track-tabletop-rpg-damage-stats-using-a-free-online-dice-roller-with-roll-history">
+            <div class="article-title">Online Dice Roller: Fix Lost Tabletop RPG Damage Stats</div>
+            <div class="article-desc">Lost combat stats ruin campaigns. Evidence shows a free online dice roller with roll history helps you track tabletop RPG damage accurately. Fix errors now.</div>
+          </a>
+          <a href="how-to-use-a-no-sign-up-virtual-d20-roller-with-roll-history-to-track-advantage-in-d-d">
+            <div class="article-title">How to Use a No Sign-up Virtual D20 Roller with Roll History to Track Advantage in D&amp;D</div>
+            <div class="article-desc">Last Thursday, my paladin rolled three natural 20s in a single session. Our table erupted each time. High fives, cheers, the works.</div>
+          </a>
+          <a href="how-to-use-a-no-sign-up-virtual-d20-roller-with-roll-history-to-analyze-dice-probability-for-d-d-advantage-rolls">
+            <div class="article-title">Stop Guessing Advantage: Virtual D20 Roller Probability</div>
+            <div class="article-desc">Stop botching D&amp;D advantage. Analyze dice probability via a no sign-up virtual D20 roller with roll history. Run this workflow and fix common mistakes today.</div>
+          </a>
+          <a href="understanding-random-generator-algorithms-behind-online-dice-animation-tools">
+            <div class="article-title">Understanding the Random Generator Algorithms Behind Online Dice Tools</div>
+            <div class="article-desc">Math.random is predictable in principle, crypto.getRandomValues is not, and the modulo bias of a 32-bit source is around 1 in 700 million. What the animation really does.</div>
+          </a>
+          <a href="how-to-save-and-export-roll-history-from-a-web-based-d20-roller-for-campaign-logs">
+            <div class="article-title">How to Save and Export Roll History from a Web-based D20 Roller for Campaign Logs</div>
+            <div class="article-desc">Picture two dungeon masters. One frantically flips through a coffee-stained notebook mid-session, trying to remember whether the rogue's stealth check last week was a 17 or a 19.</div>
+          </a>
+          <a href="can-i-roll-multiple-custom-polyhedral-dice-at-once-without-signing-up">
+            <div class="article-title">Can I Roll Multiple Custom Polyhedral Dice at Once Without Signing Up</div>
+            <div class="article-desc">Here's the habit that took me three years of running tabletop games to learn: I keep a no-signup dice roller pinned in my browser's bookmark bar at all times, labeled simply &quot;ROLL.&quot;</div>
+          </a>
+          <a href="calculating-dice-probability-for-exploding-dice-in-tabletop-rpgs-using-a-virtual-roller">
+            <div class="article-title">Calculating Dice Probability for Exploding Dice in Tabletop RPGs Using a Virtual Roller</div>
+            <div class="article-desc">Most Game Masters running online campaigns make the same assumption: an exploding d6 averages about 7. The logic feels sound. You roll a 6, you roll again, add it up.</div>
+          </a>
+          <a href="how-to-roll-4d6-drop-lowest-with-an-online-dice-roller-for-d-d-character-stats">
+            <div class="article-title">Stop Guessing Stats: Roll 4d6 Drop Lowest Online</div>
+            <div class="article-desc">D&amp;D stats shouldn't feel like algebra. Roll 4d6 drop lowest online to build your hero without the math headache. Grab your virtual dice and start rolling now!</div>
+          </a>
+          <a href="how-to-use-a-free-online-dice-roller-with-roll-history-to-track-d20-probability-for-tabletop-rpgs">
+            <div class="article-title">Online Dice Roller: Track D20 Probability Cursed Rolls</div>
+            <div class="article-desc">Think your D20 is cursed? Use a free online dice roller with roll history to track D20 probability during TTRPGs. Stop guessing your luck and try it today!</div>
+          </a>
+          <a href="how-to-analyze-dice-probability-for-custom-polyhedral-dice-using-a-free-online-roller-with-roll-history">
+            <div class="article-title">3 Ways Analyze Dice Probability Custom Polyhedral</div>
+            <div class="article-desc">Worried your new D20 is cursed? Let's sit down and analyze dice probability for custom polyhedral dice using a free online roller. Review roll history now!</div>
+          </a>
+          <a href="how-to-track-tabletop-rpg-damage-rolls-using-a-free-online-dice-roller-with-roll-history-and-no-sign-up">
+            <div class="article-title">Stop Losing RPG Damage: Free Online Dice Roller Wins</div>
+            <div class="article-desc">Stop losing damage to erased paper. Compare manual tracking against a free online dice roller with roll history and no sign-up. Skip math, track RPG damage now!</div>
+          </a>
+          <a href="how-to-roll-multiple-polyhedral-dice-online-and-track-roll-history-without-signing-up">
+            <div class="article-title">How to Roll Multiple Polyhedral Dice Online and Track Roll History</div>
+            <div class="article-desc">A dice pool needs a roll, a total and a log. How 2d20 is summed, why the animation cannot change the result, and what a no-account roll history does and does not remember.</div>
+          </a>
+          <a href="how-to-use-a-free-online-dice-roller-with-roll-history-to-analyze-dice-probability-for-tabletop-rpgs">
+            <div class="article-title">Online Dice Roller: Fix RPG Probability Mistakes 2026</div>
+            <div class="article-desc">Stop guessing your tabletop RPG odds! See how tracking roll history in a free online dice roller fixes common probability mistakes. Try these 2026 habits now!</div>
+          </a>
+          <a href="how-to-use-a-d20-roller-with-roll-history-to-analyze-dice-probability-in-tabletop-rpgs">
+            <div class="article-title">D20 Roller History: Test Cursed Dice Probability Fast</div>
+            <div class="article-desc">Think your D20 roller is cursed? Use roll history to analyze dice probability like checking coin flips. Spot unfair math fast. Start testing your dice today!</div>
+          </a>
+          <a href="how-to-use-a-no-sign-up-virtual-dice-roller-with-roll-history-to-analyze-d20-probability-for-tabletop-rpgs">
+            <div class="article-title">Virtual Dice Roller: Audit D20 Streaks Ruining Boss Fights</div>
+            <div class="article-desc">Stop trusting blind luck. Use a no sign-up virtual dice roller with roll history to analyze D20 probability, expose bad habits, and audit your rolls today.</div>
+          </a>
+          <a href="how-to-use-an-online-roll-history-tracker-to-calculate-dice-probability-for-multiple-polyhedral-dice-in-tabletop-rpgs">
+            <div class="article-title">Dice Probability 2026: Trackers vs Math TTRPG Survival</div>
+            <div class="article-desc">Facing a Tiamat boss fight? We compare manual math versus online roll history trackers calculating dice probability across polyhedral dice. Read the evidence.</div>
+          </a>
+          <a href="how-to-run-a-verifiably-fair-random-raffle-drawing-for-online-gaming-communities">
+            <div class="article-title">Fair Raffle Drawing: 4 Giveaway Blunders Fixed</div>
+            <div class="article-desc">Stop ruining community giveaways. Run a verifiably fair raffle drawing by fixing these 4 blunders. Grab our step-by-step checklist to build trust today!</div>
+          </a>
+          <a href="why-cryptographic-seed-generation-ensures-fair-dice-rolls-in-online-tabletop-games">
+            <div class="article-title">3 Fair Randomness Mistakes Crypto Seeds Instantly Fix</div>
+            <div class="article-desc">Stop rigged dice. Learn how cryptographic seed generation ensures fair dice rolls in online tabletop games. Fix fair randomness today. Read our full guide!</div>
+          </a>
+          <a href="how-to-verify-provably-fair-randomness-in-an-online-dice-roller-for-dnd">
+            <div class="article-title">Provably Fair DnD Dice Roller: Verify Roll Randomness</div>
+            <div class="article-desc">Learn how to verify provably fair randomness in an online dice roller for DnD. We walk you through checking rolls like inspecting a sealed deck. Start reading!</div>
+          </a>
+          <a href="true-random-number-generators-vs-pseudo-random-algorithms-for-board-game-raffles">
+            <div class="article-title">True Random Number Generators Vs Pseudo-random Algorithms for Board Game Raffles</div>
+            <div class="article-desc">Before you pick any tool for your board game raffle, grab a sticky note and write down one question: &quot;If a player watched me run this raffle, could they guess the next number?&quot;</div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ARTICLES-LIST-END -->
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <p class="foot-brand">dicebee — roll the dice, any dice</p>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="privacy-policy">Privacy</a>
+        <a href="privacy-policy" data-cookie-settings>Cookie Settings</a></li>
+        <li><a href="terms-of-service">Terms</a></li>
+        <li><a href="disclaimer">Disclaimer</a></li>
+        <li><a href="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="foot-legal">© <span id="yr">2026</span> dicebee. Perfectly random, every time.</div>
+</footer>
+
+<script src="js/app.js?v=9"></script>
+<!-- cms:consent -->
+<div class="cookie-banner" role="dialog" aria-modal="false" aria-label="Cookie consent">
+  <div class="cookie-card">
+    <p class="cookie-text">We use strictly necessary cookies to run the site. With your consent, we and third parties such as Google AdSense may also use cookies to analyze traffic and show you relevant ads. You can accept all, decline all, or set your own preferences. See our <a href="/privacy-policy">Privacy Policy</a>.</p>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-btn cookie-btn-decline" data-consent-decline>Decline all</button>
+      <button type="button" class="cookie-btn cookie-btn-accept" data-consent-accept>Accept all</button>
+      <button type="button" class="cookie-btn cookie-btn-settings" data-consent-settings>Cookie settings</button>
+    </div>
+    <div class="cookie-prefs">
+      <div class="cookie-pref-row">
+        <div><strong>Strictly necessary</strong><span>Required for the site to work. Always on.</span></div>
+        <input type="checkbox" checked disabled aria-label="Strictly necessary cookies">
+      </div>
+      <div class="cookie-pref-row">
+        <div><strong>Preferences</strong><span>Remembers your choices, such as theme and recent inputs.</span></div>
+        <input type="checkbox" data-consent-pref-preferences aria-label="Preference cookies">
+      </div>
+      <div class="cookie-pref-row">
+        <div><strong>Advertising</strong><span>Used by us and partners such as Google to deliver relevant ads.</span></div>
+        <input type="checkbox" data-consent-pref-ads aria-label="Advertising cookies">
+      </div>
+      <div class="cookie-actions">
+        <button type="button" class="cookie-btn cookie-btn-accept" data-consent-save>Save my choices</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/consent.js?v=1" defer></script>
+<!-- /cms:consent -->
+</body>
+</html>
